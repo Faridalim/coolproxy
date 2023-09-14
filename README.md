@@ -7,10 +7,10 @@ It support HTTP and Websocket endpoints
 After installation, create a file named :
 
 ```
-**.env.proxydev**
+.env.proxydev
 ```
 
-with below content :
+in the root project folder with below content :
 
 ```
 HTTP_TARGET="https://deis.bpsdm.id"

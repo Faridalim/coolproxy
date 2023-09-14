@@ -4,7 +4,7 @@ This is a proxy for development
 
 It support HTTP and Websocket endpoints
 
-After installation, create a file named : .env.proxydev
+After installation, create a file named : **.env.proxydev**
 with below content :
 
 ```

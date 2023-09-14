@@ -1,18 +1,15 @@
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
-const yargs = require('yargs');
-
-const args = yargs.argv;
+require('custom-env').env('proxydev');
 
 const app = express();
-const proxy_port = args.port || 3100;
 
 // Ganti parameter berikut ini
-const http_target = 'https://deis.bpsdm.id',
-      ws_target = 'wss://server-tujuan-websocket.com',
-      ws_path = '/ws',
-      auth_cookie = 'deis.ses=s%3Asl6fx0r85BXIw5YgxufcuD1aboUF6-vG.UyQ61EOIWY6tY2YzJun5E5WtMY1QVLnpSAn4Js9aRro'
-    //   proxy_port = 3100
+const http_target = process.env.HTTP_TARGET || 'https://google.co.id',
+      ws_target = process.env.WS_TARGET || 'wss://server-tujuan-websocket.com',
+      ws_path = process.env.WS_PATH || '/ws',
+      auth_cookie = process.env.AUTH_COOKIE || 'deis.ses=s%3Asl6fx0r85BXIw5YgxufcuD1aboUF6-vG.UyQ61EOIWY6tY2YzJun5E5WtMY1QVLnpSAn4Js9aRro',
+      proxy_port = process.env.PROXY_PORT || 3100
         
 // ===== Jangan Ubah setelah garis ini =====
 
